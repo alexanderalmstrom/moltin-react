@@ -5,6 +5,6 @@ module.exports = (env, argv) => {
   const config = webpack(env, argv)
 
   return merge(config, {
-    
+    // Extend with your own config here
   })
 }

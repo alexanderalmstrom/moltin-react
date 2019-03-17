@@ -14,11 +14,16 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 router.get('/', (req, res, next) => {
-  res.status(200).send("App endpoint!")
+  res.status(200).send("Hello api!")
 })
 
-router.post('/cart/add', (req, res, next) => {
-  res.status(200).json(req.body)
+router.post('/say/hello', (req, res, next) => {
+  if (!req.body || !req.body.name) {
+    res.status(500).send("Please enter your name!")
+    return
+  }
+
+  res.status(200).send(`Hello ${req.body.name}!`)
 })
 
 app.use('/api', router)

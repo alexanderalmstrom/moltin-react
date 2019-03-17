@@ -11,11 +11,14 @@
     <% } %>
   </head>
   <body>
-    <h1>Hello stranger!</h1>
-    <form action="/api/say/hello" method="post">
-      <label>What's your name?</label>
-      <input name="name" value="">
-      <input type="submit" value="Submit">
-    </form>
+    <div id="app">
+      <form action="/api/say/hello" method="post">
+        <p>
+          <label>What's your name?</label>
+          <input type="text" name="name" value="">
+        </p>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   </body>
 </html>

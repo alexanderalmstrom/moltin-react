@@ -1,3 +1,5 @@
+// app.js
+
 const express = require('express')
 const serverless = require('serverless-http')
 const bodyParser = require('body-parser')
@@ -12,15 +14,15 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 router.get('/', (req, res, next) => {
-  res.status(200).send("Cart api endpoint!")
+  res.status(200).send("App endpoint!")
 })
 
-router.post('/add', (req, res, next) => {
+router.post('/cart/add', (req, res, next) => {
   res.status(200).json(req.body)
 })
 
-app.use('/cart', router)
-app.use('/.netlify/functions/cart', router)
+app.use('/api', router)
+app.use('/.netlify/functions/index', router)
 
 module.exports = app
 module.exports.handler = serverless(app)

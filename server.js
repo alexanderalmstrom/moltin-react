@@ -1,31 +1,18 @@
 // server.js
+
 const path = require('path')
 const express = require('express')
 const http = require('http')
-const morgan = require('morgan')
-const bodyParser = require('body-parser')
 
-const cart = require('./api/cart')
-
-const cwd = process.cwd()
-const env = process.env.NODE_ENV || 'production'
+const apiCart = require('./api/cart')
 
 const app = express()
 const server = http.createServer(app)
-const port = process.env.PORT || 5000
 
-app.use(bodyParser.json())
+app.use(apiCart)
 
-if (env == 'development') {
-  app.use(morgan('dev'))
-} else {
-  app.use(morgan('combined'))
-}
+app.use(express.static(path.resolve(process.cwd(), 'public')))
 
-app.use(express.static(path.resolve(cwd, 'public')))
-
-app.use(cart)
-
-server.listen(port, function () {
+server.listen(5000, () => {
   console.log("Listening on port %s", server.address().port)
 })

@@ -4,11 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production",
+    "start": "concurrently \"netlify-lambda serve api\" \"webpack-dev-server --mode=development\"",
+    "build": "concurrently \"netlify-lambda build api\" \"webpack --mode=production\"",
     "server": "node server.js"
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
+    "netlify-lambda": "^1.4.3",
+    "serverless-http": "^1.9.1",
     "webpack.config": "https://github.com/alexanderalmstrom/webpack.config"
   }
 }

@@ -1,4 +1,4 @@
-// app.js
+// api.js
 
 const express = require('express')
 const serverless = require('serverless-http')
@@ -22,7 +22,7 @@ router.post('/cart/add', (req, res, next) => {
 })
 
 app.use('/api', router)
-app.use('/.netlify/functions/index', router)
+app.use('/.netlify/functions/api', router)
 
 module.exports = app
 module.exports.handler = serverless(app)

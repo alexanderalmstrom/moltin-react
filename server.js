@@ -3,10 +3,10 @@
 const path = require('path')
 const express = require('express')
 
-const app = require('./app/')
+const server = require('./server/api')
 
-app.use(express.static(path.resolve(process.cwd(), 'public')))
+server.use(express.static(path.resolve(process.cwd(), 'public')))
 
-app.listen(5000, () => {
+server.listen(5000, () => {
   console.log("Listening on port 5000")
 })

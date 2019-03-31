@@ -12,10 +12,14 @@
   </head>
   <body>
     <div id="app">
-      <form action="/api/say/hello" method="post">
+      <form id="product-form" action="/api/cart/add" method="post">
         <p>
-          <label>What's your name?</label>
-          <input type="text" name="name" value="">
+          <label>Select product</label>
+          <select name="product">
+            <option value="Product 1">Product 1</option>
+            <option value="Product 2">Product 2</option>
+            <option value="Product 3">Product 3</option>
+          </select>
         </p>
         <input type="submit" value="Submit">
       </form>

@@ -3,7 +3,7 @@
 const path = require('path')
 const express = require('express')
 
-const server = require('./server/api')
+const server = require('./express/api')
 
 server.use(express.static(path.resolve(process.cwd(), 'public')))
 

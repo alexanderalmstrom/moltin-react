@@ -1,4 +1,4 @@
-// api.js
+// index.js
 
 const express = require('express')
 const serverless = require('serverless-http')
@@ -11,19 +11,17 @@ const router = express.Router()
 app.use(bodyParser.json())
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
-router.get('/', (req, res, next) => {
-  res.status(200).send("Hello api!")
+router.use('*', (req, res, next) => {
+  console.log('Someting is happening')
+  next()
 })
 
-router.post('/say/hello', (req, res, next) => {
-  if (!req.body || !req.body.name) {
-    res.status(500).send("Please enter your name!")
-    return
-  }
+router.post('/cart/add', (req, res) => {
+  console.log(req.body)
 
-  res.status(200).send(`Hello ${req.body.name}!`)
+  res.status(200).json({ message: `${req.body.product} added to cart!` })
 })
 
 app.use('/api', router)

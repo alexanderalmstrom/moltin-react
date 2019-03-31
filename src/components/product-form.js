@@ -1,5 +1,7 @@
 // product-form.js
 
+import { request } from '../utils/'
+
 const productForm = document.getElementById('product-form')
 
 productForm.addEventListener('submit', e => {
@@ -18,18 +20,5 @@ const submit = form => {
     return obj
   }, {})
 
-  request(form, data)
-}
-
-const request = (form, data) => {
-  fetch(form.action, {
-    method: form.method,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(response => console.log('Success: ', JSON.stringify(response)))
-  .catch((error) => console.error(error))
+  request(form.action, data)
 }

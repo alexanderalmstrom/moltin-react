@@ -4,7 +4,7 @@ import 'ProductForm.scss'
 
 import { _get, _on, _submit } from 'utils'
 
-function addToCart (e) {
+export function addToCart (e) {
   e.preventDefault()
 
   _submit(e.target)

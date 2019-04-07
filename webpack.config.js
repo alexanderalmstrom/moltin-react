@@ -19,7 +19,7 @@ module.exports = (env, argv) => {
         path.resolve(__dirname, 'src', 'utils'),
         'node_modules'
       ],
-      extensions: ['.js', '.json']
+      extensions: ['.js', '.json', '.scss']
     }
   })
 }

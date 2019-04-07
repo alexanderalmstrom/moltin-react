@@ -1,3 +1,3 @@
-// index.js
+// utils/index.js
 
 export * from 'helpers'

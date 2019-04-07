@@ -35,7 +35,7 @@ export const request = (url, data, settings = {}) => {
     })
     .then(response => response.json())
     .then(response => JSON.stringify(response))
-    .catch((error) => console.error(error))
+    .catch(error => console.error(error))
 }
 
 export const submit = form => {

@@ -1,0 +1,39 @@
+// form.scss
+
+label {
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+
+  & + input[type="text"] {
+    display: flex;
+  }
+}
+
+input,
+button {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input[type="text"],
+input[type="submit"] {
+  display: inline-flex;
+  height: 5rem;
+  padding: 0 1rem;
+  border: 1px solid #000;
+  min-width: 30rem;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+button,
+input[type="submit"] {
+  background-color: #000;
+  padding: 0 2rem;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}

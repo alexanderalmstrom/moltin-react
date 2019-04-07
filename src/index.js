@@ -1,5 +1,5 @@
 // index.js
 
-import './components/product-form'
+import 'ProductForm'
 
-import './index.scss'
+import 'index.scss'

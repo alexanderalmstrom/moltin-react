@@ -1,4 +1,4 @@
 // index.js
 
-import 'components'
+import 'scripts'
 import 'styles'

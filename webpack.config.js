@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
     resolve: {
       modules: [
         path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'src', 'components'),
+        path.resolve(__dirname, 'src', 'scripts'),
         path.resolve(__dirname, 'src', 'styles'),
         path.resolve(__dirname, 'src', 'utils'),
         'node_modules'

@@ -1,3 +1,3 @@
-// components/index.js
+// scripts/index.js
 
 export * from 'ProductForm'

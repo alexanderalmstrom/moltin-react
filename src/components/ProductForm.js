@@ -9,7 +9,9 @@ const productForm = document.getElementById('product-form')
 productForm.addEventListener('submit', e => {
   const form = e.target
 
-  submit(form)
+  submit(form).then(res => {
+    console.log(res)
+  })
 
   e.preventDefault()
 })

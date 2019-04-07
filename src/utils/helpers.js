@@ -10,13 +10,13 @@ export const request = (url, data, settings = {}) => {
 
   settings = Object.assign(defaults, settings)
 
-  fetch(url, {
-    ...settings,
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(response => console.log('SUCCESS: ', JSON.stringify(response)))
-  .catch((error) => console.error(error))
+  return fetch(url, {
+      ...settings,
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(response => JSON.stringify(response))
+    .catch((error) => console.error(error))
 }
 
 export const submit = form => {
@@ -27,5 +27,5 @@ export const submit = form => {
     return obj
   }, {})
 
-  request(form.action, data)
+  return request(form.action, data)
 }

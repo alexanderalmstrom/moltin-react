@@ -1,12 +1,12 @@
 // helpers.js
 
-export const get = (selector, scope) => {
+export const _get = (selector, scope) => {
   if (!selector) throw new Error('Provide a selector!')
 
   return scope ? scope.querySelector(selector) : document.querySelector(selector)
 }
 
-export const on = (element, event, callback, useCapture = false) => {
+export const _on = (element, event, callback, useCapture = false) => {
   if (!element)
     throw new Error('Please provide an element to attach the event to.')
 
@@ -19,7 +19,7 @@ export const on = (element, event, callback, useCapture = false) => {
   element.addEventListener(event, callback, useCapture)
 }
 
-export const request = (url, data, settings = {}) => {
+export const _request = (url, data, settings = {}) => {
   const defaults = {
     method: 'POST',
     headers: {
@@ -38,7 +38,7 @@ export const request = (url, data, settings = {}) => {
     .catch(error => console.error(error))
 }
 
-export const submit = form => {
+export const _submit = form => {
   const formData = new FormData(form)
 
   const data = [...formData].reduce((obj, [key, val]) => {
@@ -46,5 +46,5 @@ export const submit = form => {
     return obj
   }, {})
 
-  return request(form.action, data)
+  return _request(form.action, data)
 }

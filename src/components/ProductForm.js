@@ -2,12 +2,11 @@
 
 import 'ProductForm.scss'
 
-import { submit } from 'utils'
+import { get, on, submit } from 'utils'
 
-const form = document.getElementById('product-form')
-
-form.addEventListener('submit', e => {
+function addToCart (e) {
   e.preventDefault()
-
   submit(e.target).then(res => console.log(res))
-})
+}
+
+on(get('.product-form'), 'submit', addToCart)

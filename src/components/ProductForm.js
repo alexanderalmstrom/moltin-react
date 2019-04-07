@@ -1,17 +1,13 @@
 // ProductForm.js
 
-import { submit } from 'utils'
-
 import 'ProductForm.scss'
 
-const productForm = document.getElementById('product-form')
+import { submit } from 'utils'
 
-productForm.addEventListener('submit', e => {
-  const form = e.target
+const form = document.getElementById('product-form')
 
-  submit(form).then(res => {
-    console.log(res)
-  })
-
+form.addEventListener('submit', e => {
   e.preventDefault()
+
+  submit(e.target).then(res => console.log(res))
 })

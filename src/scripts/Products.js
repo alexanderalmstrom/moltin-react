@@ -13,22 +13,11 @@ Moltin.Products.All().then((response) => {
 })
 
 const render = (products) => {
-	let html = products.map(item => {
+	let html = products.map(product => {
 		return `
-			<div>
-				<h2>${item.name}</h2>
-
-				<form class="product-form" action="/api/cart/add" method="post">
-					<p>
-						<label>Select product</label>
-						<select name="product">
-							<option value="Product 1">Product 1</option>
-							<option value="Product 2">Product 2</option>
-							<option value="Product 3">Product 3</option>
-						</select>
-					</p>
-					<input type="submit" value="Submit">
-				</form>
+			<div class="product">
+				<h2>${product.name}</h2>
+				${form()}
 			</div>
 		`
 	}).join('')
@@ -36,8 +25,24 @@ const render = (products) => {
 	$products.innerHTML = html;
 }
 
+const form = () => {
+	return `
+		<form class="product__form" action="/api/cart/add" method="post">
+			<p>
+				<label>Select product</label>
+				<select name="product">
+					<option value="Product 1">Product 1</option>
+					<option value="Product 2">Product 2</option>
+					<option value="Product 3">Product 3</option>
+				</select>
+			</p>
+			<input type="submit" value="Submit">
+		</form>
+	`
+}
+
 const events = () => {
-	const $productForms = $all('.product-form')
+	const $productForms = $all('.product__form')
 
 	$productForms.forEach(form => {
 		if (!form.length) return

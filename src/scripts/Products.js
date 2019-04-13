@@ -8,7 +8,8 @@ import { addToCart } from 'ProductForm'
 const $products = $('.products')
 
 Moltin.Products.All().then((response) => {
-	render(response.data);
+	render(response.data)
+	events()
 })
 
 const render = (products) => {
@@ -33,12 +34,14 @@ const render = (products) => {
 	}).join('')
 
 	$products.innerHTML = html;
+}
 
+const events = () => {
 	const $productForms = $all('.product-form')
 
 	$productForms.forEach(form => {
-		if (form.length) {
-			on(form, 'submit', addToCart)
-		}
+		if (!form.length) return
+
+		on(form, 'submit', addToCart)
 	})
 }

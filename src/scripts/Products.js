@@ -2,15 +2,9 @@
 
 import { Moltin } from 'services' 
 import { $, $all, on } from 'utils' 
-
 import { addToCart } from 'ProductForm'
 
 const $products = $('.products')
-
-Moltin.Products.All().then((response) => {
-	render(response.data)
-	events()
-})
 
 const render = (products) => {
 	let html = products.map(product => {
@@ -50,3 +44,8 @@ const events = () => {
 		on(form, 'submit', addToCart)
 	})
 }
+
+Moltin.Products.All().then((response) => {
+	render(response.data)
+	events()
+})

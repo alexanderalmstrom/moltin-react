@@ -1,10 +1,9 @@
 // product-form.js
 
 import { Moltin } from 'services' 
+import { submit } from 'utils'
 
 import 'product-form.scss'
-
-import { submit } from 'utils'
 
 export function addToCart (e) {
   e.preventDefault()

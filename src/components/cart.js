@@ -1,6 +1,6 @@
 // cart.js
 
-import { Moltin } from 'services' 
+import { Moltin } from 'services'
 
 import 'cart.scss'
 

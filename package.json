@@ -9,7 +9,10 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@moltin/sdk": "^3.19.0",
     "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "dotenv-webpack": "^1.7.0",
     "netlify-lambda": "^1.4.3",
     "webpack.config": "https://github.com/alexanderalmstrom/webpack.config"
   }

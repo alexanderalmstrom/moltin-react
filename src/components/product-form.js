@@ -1,8 +1,8 @@
-// ProductForm.js
+// product-form.js
 
 import { Moltin } from 'services' 
 
-import 'ProductForm.scss'
+import 'product-form.scss'
 
 import { submit } from 'utils'
 

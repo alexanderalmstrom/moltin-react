@@ -1,10 +1,12 @@
-// Products.js
+// product-list.js
 
 import { Moltin } from 'services' 
 import { $, $all, on } from 'utils' 
-import { addToCart } from 'ProductForm'
+import { addToCart } from 'product-form'
 
-const $products = $('.products')
+import 'product-list.scss'
+
+const $productList = $('.product-list')
 
 const render = (products) => {
 	let html = products.map(product => {
@@ -16,7 +18,7 @@ const render = (products) => {
 		`
 	}).join('')
 
-	$products.innerHTML = html;
+	$productList.innerHTML = html;
 }
 
 const form = (product) => {

@@ -11,7 +11,7 @@ const render = (products) => {
 		return `
 			<div class="product">
 				<h2>${product.name}</h2>
-				${form()}
+				${form(product)}
 			</div>
 		`
 	}).join('')
@@ -19,18 +19,14 @@ const render = (products) => {
 	$products.innerHTML = html;
 }
 
-const form = () => {
+const form = (product) => {
 	return `
 		<form class="product__form" action="/api/cart/add" method="post">
 			<p>
-				<label>Select product</label>
-				<select name="product">
-					<option value="Product 1">Product 1</option>
-					<option value="Product 2">Product 2</option>
-					<option value="Product 3">Product 3</option>
-				</select>
+				<input name="name" value="${product.name}" type="hidden">
+				<input name="id" value="${product.id}" type="hidden">
 			</p>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Add to cart">
 		</form>
 	`
 }

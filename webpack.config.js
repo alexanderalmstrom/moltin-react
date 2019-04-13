@@ -31,7 +31,10 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      new dotenv()
+      new dotenv(),
+      new webpack.DefinePlugin({
+        'process.env.MOLTIN_CLIENT_ID': JSON.stringify(process.env.MOLTIN_CLIENT_ID)
+      })
     ]
   })
 }

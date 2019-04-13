@@ -2,15 +2,13 @@
 
 import 'ProductForm.scss'
 
-import { _get, _on, _submit } from 'utils'
+import { submit } from 'utils'
 
 export function addToCart (e) {
   e.preventDefault()
 
-  _submit(e.target)
+  submit(e.target)
     .then(response => {
       console.log(response)
     })
 }
-
-_on(_get('.product-form'), 'submit', addToCart)

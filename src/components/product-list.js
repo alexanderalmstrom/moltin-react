@@ -1,37 +1,54 @@
 // product-list.js
 
 import { Moltin } from 'services' 
-import { $, $all, on } from 'utils' 
+import { $, $all, on, render } from 'utils' 
 import { addToCart } from 'product-form'
 
 import 'product-list.scss'
 
-const $productList = $('.product-list')
+const renderProducts = products => {
+	const $productList = $('.product-list')
 
-const render = (products) => {
-	let html = products.map(product => {
-		return `
-			<div class="product">
-				<h2>${product.name}</h2>
-				${form(product)}
-			</div>
-		`
-	}).join('')
-
-	$productList.innerHTML = html;
+	render(
+		$productList,
+		'<h1>Products</h1>' +
+		products.map(product => productItem(product)).join('')
+	)
 }
 
-const form = (product) => {
+const productItem = product => {
 	return `
-		<form class="product__form" action="/api/cart/add" method="post">
-			<input name="name" value="${product.name}" type="hidden">
-			<input name="id" value="${product.id}" type="hidden">
-			<input type="submit" value="Add to cart">
+		<div class="product-list__item">
+			<h2>
+				${product.name}
+			</h2>
+			${productForm(product)}
+		</div>
+	`
+}
+
+const productForm = product => {
+	return `
+		<form
+			class="product-list__form"
+			action="/api/cart/add"
+			method="post">
+			<input
+				name="name"
+				value="${product.name}"
+				type="hidden">
+			<input
+				name="id"
+				value="${product.id}"
+				type="hidden">
+			<input
+				type="submit"
+				value="Add to cart">
 		</form>
 	`
 }
 
-const events = () => {
+const registerEvents = () => {
 	const $productForms = $all('.product__form')
 
 	$productForms.forEach(form => {
@@ -42,6 +59,6 @@ const events = () => {
 }
 
 Moltin.Products.All().then((response) => {
-	render(response.data)
-	events()
+	renderProducts(response.data)
+	registerEvents()
 })

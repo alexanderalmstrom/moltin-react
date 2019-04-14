@@ -54,3 +54,14 @@ export const submit = form => {
 
   return request(form.action, data)
 }
+export const render = (element, html) => {
+  if (!element) return
+
+  if (!html) return
+
+  if (typeof html == 'object' || typeof html == 'array') {
+    html = html.join('')
+  }
+
+  element.innerHTML = html;
+}

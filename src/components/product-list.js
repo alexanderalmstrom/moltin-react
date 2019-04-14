@@ -30,10 +30,6 @@ const productItem = product => {
 				action="/api/cart/add"
 				method="post">
 				<input
-					name="name"
-					value="${product.name}"
-					type="hidden">
-				<input
 					name="id"
 					value="${product.id}"
 					type="hidden">

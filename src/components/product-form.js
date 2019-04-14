@@ -10,8 +10,6 @@ export function addToCart (e) {
 
   submit(e.target)
     .then(response => {
-      response = JSON.parse(response)
-
       Moltin.Cart().AddProduct(response.id, 1).then((cart) => {
         const cartItems = cart.data
 

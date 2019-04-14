@@ -40,7 +40,6 @@ export const request = (url, data, settings = {}) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(response => JSON.stringify(response))
     .catch(error => console.error(error))
 }
 

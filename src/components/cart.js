@@ -5,6 +5,11 @@ import { $, $all, render, on } from 'utils'
 
 import 'cart.scss'
 
+const cartEvents = () => {
+  $all('.cart__item .remove')
+    .forEach(btn => on(btn, 'click', removeCartItem))
+}
+
 const getCart = items => {
   render (
     $('.cart'),
@@ -26,11 +31,6 @@ const cartItem = item => {
       </button>
     </div>
   `
-}
-
-const cartEvents = () => {
-  $all('.cart__item .remove')
-    .forEach(btn => on(btn, 'click', removeCartItem))
 }
 
 const removeCartItem = event => {

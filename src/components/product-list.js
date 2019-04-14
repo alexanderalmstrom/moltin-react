@@ -6,7 +6,12 @@ import { addToCart } from 'product-form'
 
 import 'product-list.scss'
 
-const renderProducts = products => {
+const productEvents = () => {
+	$all('.product-list__form')
+		.forEach(form => on(form, 'submit', addToCart))
+}
+
+const getProducts = products => {
 	render(
 		$('.product-list'),
 		'<h1>Products</h1>' +
@@ -46,12 +51,11 @@ const productForm = product => {
 	`
 }
 
-const registerEvents = () => {
-	$all('.product-list__form')
-		.forEach(form => on(form, 'submit', addToCart))
+export const renderProducts = response => {
+	Moltin.Products.All().then(products => {
+		getProducts(products.data)
+		productEvents()
+	})
 }
 
-Moltin.Products.All().then((response) => {
-	renderProducts(response.data)
-	registerEvents()
-})
+renderProducts()

@@ -12,8 +12,6 @@ export const addToCart = event => {
   submit(event.target)
     .then(response => {
       Moltin.Cart().AddProduct(response.id, 1)
-        .then(cart => {
-          renderCart(cart)
-        })
+        .then(cart => renderCart(cart))
     })
 }

@@ -49,16 +49,16 @@ const removeCartItem = event => {
     })
 }
 
-export const renderCart = response => {
-  if (response && Object.keys(response).length) {
-    getCart(response.data)
+export const renderCart = cart => {
+  if (cart && Object.keys(cart).length) {
+    getCart(cart.data)
     cartEvents()
     return
   }
 
-  Moltin.Cart().Items().then(response => {
-    if (Object.keys(response.data).length) {
-      getCart(response.data)
+  Moltin.Cart().Items().then(cart => {
+    if (Object.keys(cart.data).length) {
+      getCart(cart.data)
       cartEvents()
     }
   })

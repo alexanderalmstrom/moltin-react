@@ -1,5 +1,3 @@
-// components/index.js
-
-export * from './product-list'
-export * from './product-form'
-export * from './cart'
+export * from './ProductList';
+export * from './ProductForm';
+export * from './Cart';

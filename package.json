@@ -1,19 +1,27 @@
 {
-  "name": "site-poc",
+  "name": "moltin-react",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"netlify-lambda serve express\" \"webpack-dev-server --mode=development\"",
-    "build": "concurrently \"netlify-lambda build express\" \"webpack --mode=production\"",
+    "start": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production",
     "server": "node server.js"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.0.0",
     "@moltin/sdk": "^3.19.0",
-    "concurrently": "^4.1.0",
+    "contentful": "^7.5.0",
     "dotenv": "^7.0.0",
     "dotenv-webpack": "^1.7.0",
-    "netlify-lambda": "^1.4.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.3",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^6.1.0",
+    "redux-thunk": "^2.3.0",
     "webpack.config": "https://github.com/alexanderalmstrom/webpack.config"
   }
 }

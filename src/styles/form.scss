@@ -23,10 +23,10 @@ input[type="submit"] {
   display: inline-flex;
   height: 5rem;
   padding: 0 1rem;
-  border: 1px solid #000;
-  min-width: 30rem;
+  min-width: 20rem;
   font-size: 1.8rem;
   color: #000;
+  border: 1px solid #000;
 }
 
 button,
@@ -36,5 +36,4 @@ input[type="submit"] {
   color: #fff;
   justify-content: center;
   align-items: center;
-  border-radius: 4rem;
 }

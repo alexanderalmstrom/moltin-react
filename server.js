@@ -5,10 +5,10 @@ require('dotenv').config()
 const path = require('path')
 const express = require('express')
 
-const server = require('./express/api')
+const app = express()
 
-server.use(express.static(path.resolve(process.cwd(), 'public')))
+app.use(express.static(path.resolve(process.cwd(), 'public')))
 
-server.listen(5000, () => {
+app.listen(5000, () => {
   console.log("Listening on port 5000")
 })

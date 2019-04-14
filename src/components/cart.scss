@@ -1,4 +1,4 @@
-// cart.scss
+// Cart.scss
 
 .cart {
   padding: 2rem;
@@ -6,17 +6,17 @@
 
 .cart__item {
   position: relative;
+}
 
-  .remove {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: transparent;
-    color: #000;
-    border: none;
-    min-width: auto;
-    height: 3rem;
-    width: 3rem;
-    font-size: 1.4rem;
-  }
+.cart__item .remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: #000;
+  border: none;
+  min-width: auto;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.4rem;
 }

@@ -18,18 +18,6 @@ module.exports = (env, argv) => {
       }
     },
 
-    resolve: {
-      modules: [
-        path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, 'src', 'components'),
-        path.resolve(__dirname, 'src', 'styles'),
-        path.resolve(__dirname, 'src', 'services'),
-        path.resolve(__dirname, 'src', 'utils'),
-        'node_modules'
-      ],
-      extensions: ['.js', '.json', '.scss']
-    },
-
     plugins: [
       new dotenv(),
       new webpack.DefinePlugin({

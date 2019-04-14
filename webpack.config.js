@@ -9,19 +9,19 @@ module.exports = (env, argv) => {
 
   return merge(config, {
     node: {
-      fs: 'empty'
+      fs: 'empty',
     },
 
     devServer: {
-      proxy: {
-        '/api': 'http://localhost:9000'
-      }
+      hot: true,
     },
 
     plugins: [
       new dotenv(),
       new webpack.DefinePlugin({
-        'process.env.MOLTIN_CLIENT_ID': JSON.stringify(process.env.MOLTIN_CLIENT_ID)
+        'process.env.MOLTIN_CLIENT_ID': JSON.stringify(process.env.MOLTIN_CLIENT_ID),
+        'process.env.CONTENTFUL_SPACE_ID': JSON.stringify(process.env.CONTENTFUL_SPACE_ID),
+        'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
       })
     ]
   })

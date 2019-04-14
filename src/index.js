@@ -1,32 +1,21 @@
-// index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { AppContainer } from 'react-hot-loader'
-
-import { configureStore } from './store'
-import App from './components/App'
+import { configureStore } from './store';
+import Root from './components/Root';
 
 import './styles/index.scss'
 
 const render = (Component) => (
 	ReactDOM.render(
     <Provider store={configureStore()}>
-      <AppContainer>
-        <Component />
-      </AppContainer>
+      <Component />
     </Provider>,
-    document.getElementById('app')
+    document.getElementById('root')
   )
 )
 
-if (document.getElementById('app')) {
-	render(App)
-}
-
-if (module.hot && document.getElementById('app')) {
-  module.hot.accept('./components/App', () => {
-    render(App)
-  })
+if (document.getElementById('root')) {
+	render(Root);
 }

@@ -49,7 +49,7 @@ const productForm = product => {
 }
 
 const registerEvents = () => {
-	const $productForms = $all('.product__form')
+	const $productForms = $all('.product-list__form')
 
 	$productForms.forEach(form => {
 		if (!form.length) return

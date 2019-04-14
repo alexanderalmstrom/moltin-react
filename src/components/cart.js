@@ -10,10 +10,8 @@ Moltin.Cart().Items().then(response => {
 })
 
 const renderCart = items => {
-  const $cart = $('.cart')
-
   render (
-    $cart,
+    $('.cart'),
     '<h1>Cart</h1>' +
     items.map(item => cartItem(item)).join('')
   )

@@ -7,10 +7,8 @@ import { addToCart } from 'product-form'
 import 'product-list.scss'
 
 const renderProducts = products => {
-	const $productList = $('.product-list')
-
 	render(
-		$productList,
+		$('.product-list'),
 		'<h1>Products</h1>' +
 		products.map(product => productItem(product)).join('')
 	)
@@ -49,9 +47,7 @@ const productForm = product => {
 }
 
 const registerEvents = () => {
-	const $productForms = $all('.product-list__form')
-
-	$productForms.forEach(form => {
+	$all('.product-list__form').forEach(form => {
 		if (!form.length) return
 
 		on(form, 'submit', addToCart)

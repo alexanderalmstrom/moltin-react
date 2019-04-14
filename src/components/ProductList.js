@@ -30,6 +30,10 @@ class ProductList extends React.Component {
         {products.items.map((product) => 
 					<div key={product.id} className="product">
 						<h2>{product.name}</h2>
+            <p>{product.description}</p>
+            <p>{product.price.map((price, index) => 
+              <span key={index}>{price.amount} {price.currency}</span>
+            )}</p>
 					</div>
 				)}
       </div>

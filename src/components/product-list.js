@@ -47,11 +47,8 @@ const productForm = product => {
 }
 
 const registerEvents = () => {
-	$all('.product-list__form').forEach(form => {
-		if (!form.length) return
-
-		on(form, 'submit', addToCart)
-	})
+	$all('.product-list__form')
+		.forEach(form => on(form, 'submit', addToCart))
 }
 
 Moltin.Products.All().then((response) => {

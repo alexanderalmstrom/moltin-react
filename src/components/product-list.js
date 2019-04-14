@@ -25,29 +25,23 @@ const productItem = product => {
 			<h2>
 				${product.name}
 			</h2>
-			${productForm(product)}
+			<form
+				class="product-list__form"
+				action="/api/cart/add"
+				method="post">
+				<input
+					name="name"
+					value="${product.name}"
+					type="hidden">
+				<input
+					name="id"
+					value="${product.id}"
+					type="hidden">
+				<input
+					type="submit"
+					value="Add to cart">
+			</form>
 		</div>
-	`
-}
-
-const productForm = product => {
-	return `
-		<form
-			class="product-list__form"
-			action="/api/cart/add"
-			method="post">
-			<input
-				name="name"
-				value="${product.name}"
-				type="hidden">
-			<input
-				name="id"
-				value="${product.id}"
-				type="hidden">
-			<input
-				type="submit"
-				value="Add to cart">
-		</form>
 	`
 }
 

@@ -4,8 +4,6 @@ import React from 'react'
 import { Moltin } from '../services'
 import { connectComponent } from '../connect'
 
-import './ProductForm.scss'
-
 class ProductForm extends React.Component {
   constructor(props) {
     super(props)

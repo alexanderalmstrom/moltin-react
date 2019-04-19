@@ -1,7 +1,7 @@
+import './ProductList.scss'
+
 import React from 'react'
 import { connectComponent } from '../connect'
-
-import './ProductList.scss'
 
 import ProductForm from './ProductForm'
 

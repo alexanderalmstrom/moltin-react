@@ -1,49 +1,60 @@
-import React from 'react';
-import { Moltin } from '../services';
-import { connectComponent } from '../connect';
+import React from 'react'
+import { Moltin } from '../services'
+import { connectComponent } from '../connect'
 
-import './Cart.scss';
+import './Cart.scss'
 
 class Cart extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props)
   }
 
   componentWillMount() {
-    this.props.loadCart();
-  }
-  
-  removeCartItem(id, quantity) {
-    Moltin.Cart().RemoveItem(id, quantity).then((cart) => {
-      console.log(cart);
-    });
+    this.props.loadCart()
   }
 
-	render () {
-		const {
-      props: {
-        cart,
-      }
+  removeCartItem(id, quantity) {
+    Moltin.Cart()
+      .RemoveItem(id, quantity)
+      .then(cart => {
+        console.log(cart)
+      })
+  }
+
+  render() {
+    const {
+      props: { cart }
     } = this
 
-    if (!cart.items.length) return null;
+    if (!cart.items.length) return null
 
-		return (
-			<div className="cart">
+    return (
+      <div className="cart">
         <h3>Cart</h3>
 
-        {cart.items.map((product) => 
-					<div key={product.id} className="product">
-						<h2>{product.name}</h2>
+        {cart.items.map(product => (
+          <div key={product.id} className="product">
+            <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <p><span>{product.unit_price.amount} {product.unit_price.currency}</span></p>
+            <p>
+              <span>
+                {product.unit_price.amount} {product.unit_price.currency}
+              </span>
+            </p>
             <p>QTY: {product.quantity}</p>
-            <button onClick={this.removeCartItem.bind(this, product.id, product.quantity)}>Remove</button>
-					</div>
-				)}
-			</div>
-		)
-	}
+            <button
+              onClick={this.removeCartItem.bind(
+                this,
+                product.id,
+                product.quantity
+              )}>
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
+    )
+  }
 }
 
-export default connectComponent(Cart);
+export default connectComponent(Cart)

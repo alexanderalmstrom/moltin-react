@@ -1,41 +1,37 @@
-import React from 'react';
-import { connectComponent } from '../connect';
+import React from 'react'
+import { connectComponent } from '../connect'
 
-import './CampaignList.scss';
+import './CampaignList.scss'
 
 class CampaignList extends React.Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
   }
 
-  componentWillMount () {
-    this.props.loadCampaigns();
+  componentWillMount() {
+    this.props.loadCampaigns()
   }
 
-  render () {
+  render() {
     const {
-      props: {
-        error,
-        loading,
-        campaigns,
-      }
+      props: { error, loading, campaigns }
     } = this
 
     if (error) return <div>Error</div>
 
-		if (loading) return <div>Loading...</div>
+    if (loading) return <div>Loading...</div>
 
     return (
       <div className="campaign-list">
-        {campaigns.items.map((campaign) => 
-					<div key={campaign.sys.id} className="campaign">
-						<h2>{campaign.fields.name}</h2>
-						{campaign.fields.text}
-					</div>
-				)}
+        {campaigns.items.map(campaign => (
+          <div key={campaign.sys.id} className="campaign">
+            <h2>{campaign.fields.name}</h2>
+            {campaign.fields.text}
+          </div>
+        ))}
       </div>
     )
   }
 }
 
-export default connectComponent(CampaignList);
+export default connectComponent(CampaignList)

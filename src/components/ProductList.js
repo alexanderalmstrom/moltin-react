@@ -1,47 +1,47 @@
-import React from 'react';
-import { connectComponent } from '../connect';
+import React from 'react'
+import { connectComponent } from '../connect'
 
-import './ProductList.scss';
+import './ProductList.scss'
 
-import ProductForm from './ProductForm';
+import ProductForm from './ProductForm'
 
 class ProductList extends React.Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
   }
 
   componentWillMount() {
-    this.props.loadProducts();
+    this.props.loadProducts()
   }
 
-  render () {
+  render() {
     const {
-      props: {
-        error,
-        loading,
-        products,
-      }
+      props: { error, loading, products }
     } = this
 
-		if (error) return <div>Error</div>
+    if (error) return <div>Error</div>
 
-		if (loading) return <div>Loading...</div>
+    if (loading) return <div>Loading...</div>
 
     return (
       <div className="product-list">
-        {products.items.map((product) => 
-					<div key={product.id} className="product">
-						<h2>{product.name}</h2>
+        {products.items.map(product => (
+          <div key={product.id} className="product">
+            <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <p>{product.price.map((price, index) => 
-              <span key={index}>{price.amount} {price.currency}</span>
-            )}</p>
+            <p>
+              {product.price.map((price, index) => (
+                <span key={index}>
+                  {price.amount} {price.currency}
+                </span>
+              ))}
+            </p>
             <ProductForm id={product.id} quantity={1} />
-					</div>
-				)}
+          </div>
+        ))}
       </div>
     )
   }
 }
 
-export default connectComponent(ProductList);
+export default connectComponent(ProductList)

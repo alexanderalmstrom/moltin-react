@@ -1,7 +1,7 @@
+import './CampaignList.scss';
+
 import React from 'react';
 import { connectComponent } from '../connect';
-
-import './CampaignList.scss';
 
 class CampaignList extends React.Component {
   constructor(props) {

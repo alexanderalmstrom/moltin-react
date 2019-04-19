@@ -3,7 +3,7 @@ import { connectComponent } from '../connect'
 
 import CampaignList from './CampaignList'
 import ProductList from './ProductList'
-import Cart from './Cart'
+import Cart from './_Cart'
 
 class App extends React.Component {
   constructor(props) {

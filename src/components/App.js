@@ -3,6 +3,7 @@ import { connectComponent } from '../connect';
 
 import CampaignList from './CampaignList';
 import ProductList from './ProductList';
+import Cart from './Cart';
 
 class App extends React.Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ class App extends React.Component {
 			<Fragment>
 				<CampaignList />
 				<ProductList />
+				<Cart />
 			</Fragment>
 		)
 	}

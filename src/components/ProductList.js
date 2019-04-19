@@ -3,6 +3,8 @@ import { connectComponent } from '../connect';
 
 import './ProductList.scss';
 
+import ProductForm from './ProductForm';
+
 class ProductList extends React.Component {
   constructor (props) {
     super(props);
@@ -34,6 +36,7 @@ class ProductList extends React.Component {
             <p>{product.price.map((price, index) => 
               <span key={index}>{price.amount} {price.currency}</span>
             )}</p>
+            <ProductForm id={product.id} quantity={1} />
 					</div>
 				)}
       </div>

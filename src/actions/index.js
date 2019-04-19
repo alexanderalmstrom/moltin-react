@@ -11,3 +11,8 @@ export const loadProducts = () => ({
 	type: 'GET_PRODUCTS',
 	payload: Moltin.Products.All(),
 });
+
+export const loadCart = () => ({
+	type: 'GET_CART',
+	payload: Moltin.Cart().Items(),
+});

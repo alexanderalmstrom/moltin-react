@@ -1,38 +1,38 @@
-import './Cart.scss'
+import './Cart.scss';
 
-import React from 'react'
-import { Moltin } from '../services'
-import { connectComponent } from '../connect'
+import React from 'react';
+import { Moltin } from '../services';
+import { connectComponent } from '../connect';
 
 class Cart extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentWillMount() {
-    this.props.loadCart()
+    this.props.loadCart();
   }
 
   removeCartItem(id, quantity) {
     Moltin.Cart()
       .RemoveItem(id, quantity)
-      .then(cart => {
-        console.log(cart)
-      })
+      .then((cart) => {
+        console.log(cart);
+      });
   }
 
   render() {
     const {
-      props: { cart }
-    } = this
+      props: { cart },
+    } = this;
 
-    if (!cart.items.length) return null
+    if (!cart.items.length) return null;
 
     return (
       <div className="cart">
         <h3>Cart</h3>
 
-        {cart.items.map(product => (
+        {cart.items.map((product) => (
           <div key={product.id} className="product">
             <h2>{product.name}</h2>
             <p>{product.description}</p>
@@ -53,8 +53,8 @@ class Cart extends React.Component {
           </div>
         ))}
       </div>
-    )
+    );
   }
 }
 
-export default connectComponent(Cart)
+export default connectComponent(Cart);

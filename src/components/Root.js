@@ -1,7 +1,7 @@
-import { hot } from 'react-hot-loader'
+import { hot } from 'react-hot-loader';
 
-import App from './App'
+import App from './App';
 
-const Root = () => <App />
+const Root = () => <App />;
 
-export default hot(module)(App)
+export default hot(module)(App);

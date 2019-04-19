@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react'
-import { connectComponent } from '../connect'
+import React, { Fragment } from 'react';
+import { connectComponent } from '../connect';
 
-import CampaignList from './CampaignList'
-import ProductList from './ProductList'
-import Cart from './Cart'
+import CampaignList from './CampaignList';
+import ProductList from './ProductList';
+import Cart from './Cart';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -17,8 +17,8 @@ class App extends React.Component {
         <ProductList />
         <Cart />
       </Fragment>
-    )
+    );
   }
 }
 
-export default connectComponent(App)
+export default connectComponent(App);

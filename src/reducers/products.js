@@ -1,8 +1,8 @@
 const initialState = {
   loading: false,
   error: null,
-  items: []
-}
+  items: [],
+};
 
 export const products = (state = initialState, action) => {
   switch (action.type) {
@@ -10,21 +10,21 @@ export const products = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: null
-      }
+        error: null,
+      };
     case 'GET_PRODUCTS_FULFILLED':
       return {
         ...state,
         loading: false,
-        items: action.payload.data
-      }
+        items: action.payload.data,
+      };
     case 'GET_PRODUCTS_REJECTED':
       return {
         ...state,
         loading: false,
-        error: true
-      }
+        error: true,
+      };
     default:
-      return state
+      return state;
   }
-}
+};

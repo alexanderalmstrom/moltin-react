@@ -1,4 +1,4 @@
 // services/index.js
 
-export * from './moltin'
-export * from './contentful'
+export * from './moltin';
+export * from './contentful';

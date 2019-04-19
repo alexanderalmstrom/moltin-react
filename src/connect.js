@@ -1,17 +1,17 @@
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import * as actionCreators from './actions'
+import * as actionCreators from './actions';
 
-export const mapStateToProps = state => state
+export const mapStateToProps = (state) => state;
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
+  return bindActionCreators(actionCreators, dispatch);
 }
 
 export function connectComponent(component) {
   return connect(
     mapStateToProps,
     mapDispatchToProps
-  )(component)
+  )(component);
 }

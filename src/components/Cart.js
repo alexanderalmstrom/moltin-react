@@ -2,7 +2,7 @@ import React from 'react'
 import { Moltin } from '../services'
 import { connectComponent } from '../connect'
 
-import './_Cart.scss'
+import './Cart.scss'
 
 class Cart extends React.Component {
   constructor(props) {

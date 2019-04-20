@@ -1,7 +1,7 @@
 if (!process.env.CONTENTFUL_SPACE_ID)
-  throw new Error('Contentful space id is missing');
+  throw new Error('Contentful space id is missing!');
 if (!process.env.CONTENTFUL_ACCESS_TOKEN)
-  throw new Error('Contentful access token is missing.');
+  throw new Error('Contentful access token is missing!');
 
 import { createClient } from 'contentful';
 
@@ -12,7 +12,7 @@ const config = {
 
 if (process.env.NODE_ENV == 'development') {
   if (!process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN)
-    throw new Error('Contentful preview access token is missing.');
+    throw new Error('Contentful preview access token is missing!');
 
   config.accessToken = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
   config.host = 'preview.contentful.com';

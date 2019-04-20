@@ -3,7 +3,7 @@ if (!process.env.CONTENTFUL_SPACE_ID)
 if (!process.env.CONTENTFUL_ACCESS_TOKEN)
   throw new Error('Contentful access token is missing!');
 
-import { createClient } from 'contentful';
+import { createClient as ContentfulClient } from 'contentful';
 
 const config = {
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -18,4 +18,4 @@ if (process.env.NODE_ENV == 'development') {
   config.host = 'preview.contentful.com';
 }
 
-export const Contentful = createClient(config);
+export const Contentful = ContentfulClient(config);

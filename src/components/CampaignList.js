@@ -3,6 +3,9 @@ import './CampaignList.scss';
 import React from 'react';
 import { connectComponent } from '../connect';
 
+import Error from './Error';
+import Loading from './Loading';
+
 class CampaignList extends React.Component {
   constructor(props) {
     super(props);
@@ -17,9 +20,9 @@ class CampaignList extends React.Component {
       props: { campaigns },
     } = this;
 
-    if (campaigns.error) return <div>Error</div>;
+    if (campaigns.error) return <Error />;
 
-    if (campaigns.loading) return <div>Loading...</div>;
+    if (campaigns.loading) return <Loading />;
 
     return (
       <div className="campaign-list">

@@ -1,8 +1,8 @@
 import './ProductForm.scss';
 
 import React from 'react';
-import { Moltin } from '../services';
 import { connectComponent } from '../connect';
+import { Moltin } from '../services';
 
 class ProductForm extends React.Component {
   constructor(props) {

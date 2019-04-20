@@ -3,6 +3,9 @@ import './ProductList.scss';
 import React from 'react';
 import { connectComponent } from '../connect';
 
+import Error from './Error';
+import Loading from './Loading';
+
 import ProductForm from './ProductForm';
 
 class ProductList extends React.Component {
@@ -19,9 +22,9 @@ class ProductList extends React.Component {
       props: { products },
     } = this;
 
-    if (products.error) return <div>Error</div>;
+    if (products.error) return <Error />;
 
-    if (products.loading) return <div>Loading...</div>;
+    if (products.loading) return <Loading />;
 
     return (
       <div className="product-list">

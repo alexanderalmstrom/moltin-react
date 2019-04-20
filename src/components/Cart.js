@@ -1,8 +1,12 @@
 import './Cart.scss';
 
 import React from 'react';
-import { Moltin } from '../services';
+
 import { connectComponent } from '../connect';
+import { Moltin } from '../services';
+
+import Error from './Error';
+import Loading from './Loading';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -26,9 +30,9 @@ class Cart extends React.Component {
       props: { cart },
     } = this;
 
-    if (cart.error) return <div>Error</div>;
+    if (cart.error) return <Error />;
 
-    if (cart.loading) return <div>Loading...</div>
+    if (cart.loading) return <Loading />;
 
     if (!cart.items.length) return null;
 

@@ -22,6 +22,7 @@ module.exports = (env, argv) => {
         'process.env.MOLTIN_CLIENT_ID': JSON.stringify(process.env.MOLTIN_CLIENT_ID),
         'process.env.CONTENTFUL_SPACE_ID': JSON.stringify(process.env.CONTENTFUL_SPACE_ID),
         'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
+        'process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN),
       })
     ]
   })

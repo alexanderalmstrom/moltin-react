@@ -16,12 +16,12 @@ class ProductList extends React.Component {
 
   render() {
     const {
-      props: { error, loading, products },
+      props: { products },
     } = this;
 
-    if (error) return <div>Error</div>;
+    if (products.error) return <div>Error</div>;
 
-    if (loading) return <div>Loading...</div>;
+    if (products.loading) return <div>Loading...</div>;
 
     return (
       <div className="product-list">

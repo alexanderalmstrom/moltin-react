@@ -26,6 +26,10 @@ class Cart extends React.Component {
       props: { cart },
     } = this;
 
+    if (cart.error) return <div>Error</div>;
+
+    if (cart.loading) return <div>Loading...</div>
+
     if (!cart.items.length) return null;
 
     return (

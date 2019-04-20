@@ -14,12 +14,12 @@ class CampaignList extends React.Component {
 
   render() {
     const {
-      props: { error, loading, campaigns },
+      props: { campaigns },
     } = this;
 
-    if (error) return <div>Error</div>;
+    if (campaigns.error) return <div>Error</div>;
 
-    if (loading) return <div>Loading...</div>;
+    if (campaigns.loading) return <div>Loading...</div>;
 
     return (
       <div className="campaign-list">

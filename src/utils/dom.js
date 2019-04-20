@@ -1,4 +1,4 @@
-// helpers.js
+// dom.js
 
 export const $ = (selector, scope) => {
   if (!selector) throw new Error('Provide a selector!');

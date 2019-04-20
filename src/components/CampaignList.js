@@ -24,6 +24,8 @@ class CampaignList extends React.Component {
 
     if (campaigns.loading) return <Loading />;
 
+    if (!campaigns.items.length) return null;
+
     return (
       <div className="campaign-list">
         {campaigns.items.map((campaign) => (

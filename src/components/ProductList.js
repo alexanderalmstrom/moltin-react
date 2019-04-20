@@ -26,6 +26,8 @@ class ProductList extends React.Component {
 
     if (products.loading) return <Loading />;
 
+    if (!products.items.length) return null;
+
     return (
       <div className="product-list">
         {products.items.map((product) => (

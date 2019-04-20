@@ -41,16 +41,15 @@ class Cart extends React.Component {
         <h3>Cart</h3>
 
         {cart.items.map((product) => (
-          <div key={product.id} className="product">
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>
-              <span>
-                {product.unit_price.amount} {product.unit_price.currency}
-              </span>
+          <div key={product.id} className="cart-item">
+            <h2 className="name">{product.name}</h2>
+            <p className="description">{product.description}</p>
+            <p className="price">
+              {product.unit_price.amount} {product.unit_price.currency}
             </p>
             <p>QTY: {product.quantity}</p>
             <button
+              className="remove"
               onClick={this.removeCartItem.bind(
                 this,
                 product.id,

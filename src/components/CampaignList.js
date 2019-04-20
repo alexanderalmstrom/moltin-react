@@ -30,8 +30,8 @@ class CampaignList extends React.Component {
       <div className="campaign-list">
         {campaigns.items.map((campaign) => (
           <div key={campaign.sys.id} className="campaign">
-            <h2>{campaign.fields.name}</h2>
-            {campaign.fields.text}
+            <h2 className="name">{campaign.fields.name}</h2>
+            <div className="text">{campaign.fields.text}</div>
           </div>
         ))}
       </div>

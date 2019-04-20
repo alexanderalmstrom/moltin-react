@@ -47,7 +47,7 @@ class Cart extends React.Component {
             <p className="price">
               {product.unit_price.amount} {product.unit_price.currency}
             </p>
-            <p>QTY: {product.quantity}</p>
+            <p className="quantity">QTY: {product.quantity}</p>
             <button
               className="remove"
               onClick={this.removeCartItem.bind(

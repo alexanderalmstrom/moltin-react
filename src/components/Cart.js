@@ -43,7 +43,10 @@ class Cart extends React.Component {
         </header>
         {cart.items.map((product) => (
           <div key={product.id} className="cart__item">
-            <div className="name">{product.name} <span className="quantity">x {product.quantity}</span></div>
+            <div className="name">
+              {product.name}{' '}
+              <span className="quantity">x {product.quantity}</span>
+            </div>
             <div className="price">
               {product.unit_price.amount} {product.unit_price.currency}
             </div>

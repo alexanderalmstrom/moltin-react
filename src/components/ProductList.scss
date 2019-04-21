@@ -10,7 +10,7 @@
 
 .product-list__item {
   @include gutter;
-  @include col(12); 
+  @include col(12);
   margin-bottom: 4rem;
 
   @include media(md) {

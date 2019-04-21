@@ -5,8 +5,7 @@ import { connectComponent } from '../connect';
 
 import Error from './Error';
 import Loading from './Loading';
-
-import ProductForm from './ProductForm';
+import ProductItem from './ProductItem';
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -30,19 +29,8 @@ class ProductList extends React.Component {
 
     return (
       <div className="product-list">
-        {products.items.map((product) => (
-          <div key={product.id} className="product-list__item">
-            <h2 className="name">{product.name}</h2>
-            <p className="description">{product.description}</p>
-            <p className="price">
-              {product.price.map((price, index) => (
-                <span key={index}>
-                  {price.amount} {price.currency}
-                </span>
-              ))}
-            </p>
-            <ProductForm id={product.id} quantity={1} />
-          </div>
+        {products.items.map((product, index) => (
+          <ProductItem key={index} {...product} />
         ))}
       </div>
     );

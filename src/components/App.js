@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connectComponent } from '../connect';
 
-import CampaignList from './CampaignList';
-import ProductList from './ProductList';
-import Cart from './Cart';
+import Home from './Home';
+import NotFound from './NotFound';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,11 +12,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Fragment>
-        <CampaignList />
-        <ProductList />
-        <Cart />
-      </Fragment>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="*" component={NotFound} />
+        </Switch>
+      </Router>
     );
   }
 }

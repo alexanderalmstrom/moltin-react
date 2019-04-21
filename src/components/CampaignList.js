@@ -29,7 +29,8 @@ class CampaignList extends React.Component {
     return (
       <div className="campaign-list">
         {campaigns.items.map((campaign) => (
-          <div key={campaign.sys.id} className="campaign">
+          <div key={campaign.sys.id} className="campaign-list__item">
+            <img src={campaign.fields.image.fields.file.url} alt="" />
             <h2 className="name">{campaign.fields.name}</h2>
             <div className="text">{campaign.fields.text}</div>
           </div>

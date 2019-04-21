@@ -38,16 +38,15 @@ class Cart extends React.Component {
 
     return (
       <div className="cart">
-        <h3>Cart</h3>
-
+        <header className="cart__header">
+          <h3 className="cart__header-title">Shopping bag</h3>
+        </header>
         {cart.items.map((product) => (
-          <div key={product.id} className="cart-item">
-            <h2 className="name">{product.name}</h2>
-            <p className="description">{product.description}</p>
-            <p className="price">
+          <div key={product.id} className="cart__item">
+            <div className="name">{product.name} <span className="quantity">x {product.quantity}</span></div>
+            <div className="price">
               {product.unit_price.amount} {product.unit_price.currency}
-            </p>
-            <p className="quantity">QTY: {product.quantity}</p>
+            </div>
             <button
               className="remove"
               onClick={this.removeCartItem.bind(
@@ -55,7 +54,7 @@ class Cart extends React.Component {
                 product.id,
                 product.quantity
               )}>
-              Remove
+              X
             </button>
           </div>
         ))}

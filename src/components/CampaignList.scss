@@ -1,5 +1,18 @@
 // CampaignList.scss
 
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
 .campaign-list {
-  padding: 2rem;
+  @include container;
+  margin-top: 4rem;
+}
+
+.campaign-list__item {
+  @include gutter;
+  margin-bottom: 4rem;
+
+  .name {
+    margin-top: 4rem;
+  }
 }

@@ -8,11 +8,11 @@
   margin-top: 4rem;
 }
 
-.campaign-list__item {
+.campaign {
   @include gutter;
   margin-bottom: 4rem;
+}
 
-  .name {
-    margin-top: 4rem;
-  }
+.campaign__name {
+  margin-top: 4rem;
 }

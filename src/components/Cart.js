@@ -14,8 +14,8 @@ class Cart extends React.Component {
     super(props);
 
     this.state = {
-      open: false
-    }
+      open: false,
+    };
   }
 
   componentWillMount() {
@@ -46,20 +46,19 @@ class Cart extends React.Component {
     const defaultStyle = {
       transition: `opacity ${duration}ms ease-in-out`,
       opacity: 0,
-    }
+    };
 
     const transitionStyles = {
       entering: { opacity: 1 },
-      entered:  { opacity: 1 },
-      exiting:  { opacity: 0 },
-      exited:  { opacity: 0 },
-    }
+      entered: { opacity: 1 },
+      exiting: { opacity: 0 },
+      exited: { opacity: 0 },
+    };
 
     return (
-
       <Transition in={this.state.open} timeout={duration}>
-        {state => (
-          <div style={{ ...defaultStyle, ...transitionStyles[state]}}>
+        {(state) => (
+          <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
             <div className="cart">
               <header className="cart__header">
                 <h3 className="cart__header--title">Shopping bag</h3>

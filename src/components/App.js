@@ -17,12 +17,12 @@ class App extends React.Component {
     return (
       <Fragment>
         <Header />
-          <Router>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="*" component={NotFound} />
-            </Switch>
-          </Router>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="*" component={NotFound} />
+          </Switch>
+        </Router>
         <Footer />
         <Cart />
       </Fragment>

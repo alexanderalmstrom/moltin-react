@@ -67,7 +67,7 @@ class Cart extends React.Component {
                 <div key={product.id} className="cart__item">
                   <div className="cart__item--name">
                     {product.name}{' '}
-                    <span className="quantity">x {product.quantity}</span>
+                    <span className="cart__item--quantity">x {product.quantity}</span>
                   </div>
                   <div className="cart__item--price">
                     {product.unit_price.amount} {product.unit_price.currency}

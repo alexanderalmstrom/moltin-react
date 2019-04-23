@@ -1,9 +1,9 @@
-// ProductItem.scss
+// ProductCard.scss
 
 @import '../styles/variables.scss';
 @import '../styles/mixins.scss';
 
-.product-item {
+.product-card {
   @include gutter;
   @include col(12);
   margin-bottom: 4rem;

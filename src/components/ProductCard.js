@@ -1,4 +1,4 @@
-import './ProductItem.scss';
+import './ProductCard.scss';
 
 import React from 'react';
 
@@ -15,10 +15,10 @@ class ProductItem extends React.Component {
     } = this;
 
     return (
-      <div className="product-item">
-        <h2 className="product-item__name">{name}</h2>
-        <p className="product-item__description">{description}</p>
-        <p className="product-item__price">
+      <div className="product-card">
+        <h2 className="product-card__name">{name}</h2>
+        <p className="product-card__description">{description}</p>
+        <p className="product-card__price">
           {price.map((p, i) => (
             <span key={i}>
               {p.amount} {p.currency}

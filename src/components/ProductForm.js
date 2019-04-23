@@ -25,7 +25,7 @@ class ProductForm extends React.Component {
     return (
       <div className="product-form">
         <button
-          className="btn"
+          className="product-form__btn"
           onClick={this.addToCart.bind(this, id, quantity)}>
           Add to cart
         </button>

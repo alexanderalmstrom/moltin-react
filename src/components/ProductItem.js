@@ -15,10 +15,10 @@ class ProductItem extends React.Component {
     } = this;
 
     return (
-      <div className="product-list__item">
-        <h2 className="name">{name}</h2>
-        <p className="description">{description}</p>
-        <p className="price">
+      <div className="product-item">
+        <h2 className="product-item__name">{name}</h2>
+        <p className="product-item__description">{description}</p>
+        <p className="product-item__price">
           {price.map((p, i) => (
             <span key={i}>
               {p.amount} {p.currency}

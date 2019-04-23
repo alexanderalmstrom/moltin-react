@@ -1,1 +1,18 @@
 // ProductItem.scss
+
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
+.product-item {
+  @include gutter;
+  @include col(12);
+  margin-bottom: 4rem;
+
+  @include media(md) {
+    @include col(6);
+  }
+
+  .product-form__btn {
+    width: 100%;
+  }
+}

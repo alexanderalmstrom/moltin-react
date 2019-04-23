@@ -7,19 +7,3 @@
   @include container;
   margin-top: 4rem;
 }
-
-.product-list__item {
-  @include gutter;
-  @include col(12);
-  margin-bottom: 4rem;
-
-  @include media(md) {
-    @include col(6);
-  }
-
-  .product-form {
-    .btn {
-      width: 100%;
-    }
-  }
-}

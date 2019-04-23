@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 
 import CampaignList from './CampaignList';
 import ProductList from './ProductList';
-import Cart from './Cart';
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,7 +13,6 @@ class Home extends React.Component {
       <Fragment>
         <CampaignList />
         <ProductList />
-        <Cart />
       </Fragment>
     );
   }

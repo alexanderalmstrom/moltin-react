@@ -1,23 +1,22 @@
-import './CampaignList.scss';
+import "./CampaignList.scss";
 
-import React from 'react';
-import { connectComponent } from '../connect';
+import React from "react";
+import PropTypes from "prop-types";
+import { connectComponent } from "../connect";
 
-import Error from './Error';
-import Loading from './Loading';
+import Error from "./Error";
+import Loading from "./Loading";
 
 class CampaignList extends React.Component {
   constructor(props) {
     super(props);
-  }
 
-  componentWillMount() {
     this.props.loadCampaigns();
   }
 
   render() {
     const {
-      props: { campaigns },
+      props: { campaigns }
     } = this;
 
     if (campaigns.error) return <Error />;
@@ -28,7 +27,7 @@ class CampaignList extends React.Component {
 
     return (
       <div className="campaign-list">
-        {campaigns.items.map((campaign) => (
+        {campaigns.items.map(campaign => (
           <div key={campaign.sys.id} className="campaign">
             {campaign.fields.image ? (
               <img
@@ -45,5 +44,10 @@ class CampaignList extends React.Component {
     );
   }
 }
+
+CampaignList.propTypes = {
+  loadCampaigns: PropTypes.func,
+  campaigns: PropTypes.object
+};
 
 export default connectComponent(CampaignList);

@@ -1,8 +1,9 @@
-import './ProductForm.scss';
+import "./ProductForm.scss";
 
-import React from 'react';
-import { connectComponent } from '../connect';
-import { Moltin } from '../services';
+import React from "react";
+import PropTypes from "prop-types";
+import { connectComponent } from "../connect";
+import { Moltin } from "../services";
 
 class ProductForm extends React.Component {
   constructor(props) {
@@ -12,14 +13,14 @@ class ProductForm extends React.Component {
   addToCart(id, quantity) {
     Moltin.Cart()
       .AddProduct(id, quantity)
-      .then((cart) => {
+      .then(cart => {
         console.log(cart);
       });
   }
 
   render() {
     const {
-      props: { id, quantity },
+      props: { id, quantity }
     } = this;
 
     return (
@@ -33,5 +34,10 @@ class ProductForm extends React.Component {
     );
   }
 }
+
+ProductForm.propTypes = {
+  id: PropTypes.string,
+  quantity: PropTypes.number
+};
 
 export default connectComponent(ProductForm);

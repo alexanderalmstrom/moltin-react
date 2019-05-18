@@ -1,8 +1,8 @@
-import './Error.scss';
+import "./Error.scss";
 
-import React from 'react';
+import React from "react";
 
-const NotFound = (props) => {
+const NotFound = () => {
   return (
     <div className="not-found">
       <h1>404 - Page not found</h1>

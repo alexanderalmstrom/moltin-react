@@ -1,24 +1,23 @@
-import './ProductList.scss';
+import "./ProductList.scss";
 
-import React from 'react';
-import { connectComponent } from '../connect';
+import React from "react";
+import PropTypes from "prop-types";
+import { connectComponent } from "../connect";
 
-import Error from './Error';
-import Loading from './Loading';
-import ProductCard from './ProductCard';
+import Error from "./Error";
+import Loading from "./Loading";
+import ProductCard from "./ProductCard";
 
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
-  }
 
-  componentWillMount() {
     this.props.loadProducts();
   }
 
   render() {
     const {
-      props: { products },
+      props: { products }
     } = this;
 
     if (products.error) return <Error />;
@@ -36,5 +35,10 @@ class ProductList extends React.Component {
     );
   }
 }
+
+ProductList.propTypes = {
+  loadProducts: PropTypes.func,
+  products: PropTypes.object
+};
 
 export default connectComponent(ProductList);

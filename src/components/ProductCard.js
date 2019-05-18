@@ -1,17 +1,18 @@
-import './ProductCard.scss';
+import "./ProductCard.scss";
 
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-import ProductForm from './ProductForm';
+import ProductForm from "./ProductForm";
 
-class ProductItem extends React.Component {
+class ProducCard extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     const {
-      props: { id, name, description, price },
+      props: { id, name, description, price }
     } = this;
 
     return (
@@ -31,4 +32,11 @@ class ProductItem extends React.Component {
   }
 }
 
-export default ProductItem;
+ProducCard.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.array
+};
+
+export default ProducCard;

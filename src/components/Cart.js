@@ -1,38 +1,37 @@
-import './Cart.scss';
+import "./Cart.scss";
 
-import React from 'react';
-import { Transition } from 'react-transition-group';
+import React from "react";
+import PropTypes from "prop-types";
+import { Transition } from "react-transition-group";
 
-import { connectComponent } from '../connect';
-import { Moltin } from '../services';
+import { connectComponent } from "../connect";
+import { Moltin } from "../services";
 
-import Error from './Error';
-import Loading from './Loading';
+import Error from "./Error";
+import Loading from "./Loading";
 
 class Cart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      open: false,
+      open: false
     };
-  }
 
-  componentWillMount() {
     this.props.loadCart();
   }
 
   removeCartItem(id, quantity) {
     Moltin.Cart()
       .RemoveItem(id, quantity)
-      .then((cart) => {
+      .then(cart => {
         console.log(cart);
       });
   }
 
   render() {
     const {
-      props: { cart },
+      props: { cart }
     } = this;
 
     if (cart.error) return <Error />;
@@ -45,29 +44,31 @@ class Cart extends React.Component {
 
     const defaultStyle = {
       transition: `opacity ${duration}ms ease-in-out`,
-      opacity: 0,
+      opacity: 0
     };
 
     const transitionStyles = {
       entering: { opacity: 1 },
       entered: { opacity: 1 },
       exiting: { opacity: 0 },
-      exited: { opacity: 0 },
+      exited: { opacity: 0 }
     };
 
     return (
       <Transition in={this.state.open} timeout={duration}>
-        {(state) => (
+        {state => (
           <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
             <div className="cart">
               <header className="cart__header">
                 <h3 className="cart__header--title">Shopping bag</h3>
               </header>
-              {cart.items.map((product) => (
+              {cart.items.map(product => (
                 <div key={product.id} className="cart__item">
                   <div className="cart__item--name">
-                    {product.name}{' '}
-                    <span className="cart__item--quantity">x {product.quantity}</span>
+                    {product.name}{" "}
+                    <span className="cart__item--quantity">
+                      x {product.quantity}
+                    </span>
                   </div>
                   <div className="cart__item--price">
                     {product.unit_price.amount} {product.unit_price.currency}
@@ -90,5 +91,10 @@ class Cart extends React.Component {
     );
   }
 }
+
+Cart.propTypes = {
+  loadCart: PropTypes.func,
+  cart: PropTypes.object
+};
 
 export default connectComponent(Cart);

@@ -40,3 +40,20 @@
   max-width: ($col / $grid-columns) * 100%;
   flex: ($col / $grid-columns) * 100% 0 0;
 }
+
+@mixin container($width: $grid-width) {
+  width: 100%;
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin row($collapse: $grid-gutter) {
+  width: auto;
+  margin-left: -$grid-gutter;
+  margin-right: -$grid-gutter;
+}
+
+@mixin clearfix {
+  @include grid-container; // clearfix
+}
